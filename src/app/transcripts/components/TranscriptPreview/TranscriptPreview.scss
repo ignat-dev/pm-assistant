@@ -1,0 +1,13 @@
+.transcript-preview {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  white-space: pre-line;
+
+  > h5 {
+    border-bottom: 1px solid var(--pico-table-border-color);
+    color: var(--pico-muted-color);
+    flex: 0;
+    padding-bottom: 0.5rem;
+  }
+}

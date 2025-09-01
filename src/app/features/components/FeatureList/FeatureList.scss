@@ -1,0 +1,56 @@
+.feature-list {
+  > table {
+    height: 100%;
+    margin: 0;
+    position: relative;
+    table-layout: fixed;
+    width: 100%;
+
+    > thead > tr > th,
+    > tbody > tr > td {
+      text-align: right;
+
+      &:first-of-type {
+        overflow: hidden;
+        text-align: left;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    > thead > tr > th {
+      border-bottom: 0;
+      box-shadow: inset 0 calc(-1 *var(--pico-border-width)) var(--pico-table-border-color);
+      color: var(--pico-muted-color);
+      font-size: 0.8em;
+      padding-bottom: 0.75rem;
+      padding-top: 0.75rem;
+      position: sticky;
+      top: 0;
+      white-space: nowrap;
+      z-index: 1;
+    }
+
+    > tbody {
+      > tr {
+        > td {
+          transition-duration: .2s;
+          transition-property: background-color, color;
+          transition-timing-function: ease-in-out;
+        }
+
+        &:hover > td:not([colspan]) {
+          background-color: var(--pico-table-row-stripped-background-color);
+          color: var(--pico-primary);
+          cursor: pointer;
+        }
+
+        &.selected > td {
+          background-color: var(--pico-mark-background-color);
+          color: var(--pico-contrast);
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}

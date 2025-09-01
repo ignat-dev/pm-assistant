@@ -1,0 +1,37 @@
+{
+  "name": "pm-assistant",
+  "description": "Simple app that uses AI to extract feature requests from chat transcripts.",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "next build --turbopack",
+    "dev": "next dev --turbopack",
+    "lint": "eslint .",
+    "lint-fix": "npm run lint -- --fix",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3",
+    "@langchain/openai": "^0.6",
+    "@picocss/pico": "^2",
+    "langchain": "^0.3",
+    "next": "^15",
+    "uuid": "^11"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@eslint/js": "^9",
+    "@next/eslint-plugin-next": "^15",
+    "@stylistic/eslint-plugin": "^1",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@typescript-eslint/eslint-plugin": "^8",
+    "@typescript-eslint/parser": "^8",
+    "eslint-config-next": "^15",
+    "eslint-plugin-react": "^7",
+    "eslint": "^9",
+    "sass-embedded": "^1",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,14 @@
+.modal-dialog {
+  > article {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    overflow: hidden;
+    padding-top: calc(2 *var(--pico-block-spacing-vertical));
+    width: min(50%, 600px);
+
+    > :not(footer) {
+      padding: 0 var(--pico-block-spacing-horizontal);
+    }
+  }
+}

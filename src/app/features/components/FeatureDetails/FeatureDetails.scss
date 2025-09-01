@@ -1,0 +1,37 @@
+.feature-details {
+  > article {
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+
+    > header {
+      align-items: start;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      gap: 0.5rem;
+      justify-content: space-between;
+      position: sticky;
+      top: calc(-1 * var(--pico-block-spacing-vertical));
+      z-index: 1;
+
+      > h3 {
+        margin: -0.25rem 0 0 0;
+        line-height: 1.25;
+      }
+
+      > button {
+        border-color: transparent;
+        border-radius: 50%;
+        display: block;
+        height: 1.6rem;
+        line-height: 1;
+        padding: 0.25rem;
+        width: 1.6rem;
+      }
+    }
+
+    > section + section {
+      margin-top: 2rem;
+    }
+  }
+}

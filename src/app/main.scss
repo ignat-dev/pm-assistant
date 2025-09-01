@@ -1,0 +1,35 @@
+@use "@picocss/pico/scss/pico" with (
+  $enable-semantic-container: true,
+  $enable-classes: true,
+  $modules: (
+    "components/accordion": false,
+    "components/card": true,
+    "components/dropdown": false,
+    "components/loading": true,
+    "components/modal": true,
+    "components/nav": false,
+    "components/progress": true,
+    "components/tooltip": false,
+    "content/code": true,
+    "forms/input-color": false,
+    "forms/input-date": false,
+    "forms/input-file": false,
+    "forms/input-range": false,
+    "forms/input-search": false,
+    "utilities/accessibility": false,
+    "utilities/reduce-motion": false,
+  )
+);
+
+html,
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+body > header,
+body > main,
+body > footer {
+  max-width: none;
+  padding: 0;
+}

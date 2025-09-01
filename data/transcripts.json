@@ -1,0 +1,103 @@
+[
+  {
+    "id": "transcript-1",
+    "ts": 1693500000000,
+    "content": "customer: I really want to have dark mode, because this light theme is straining my eyes\n\nsupport: This is a common feature request that's already in the workings.\n\ncustomer: When will it be available?\n\nsupport: We expect to release it next quarter.\n\ncustomer: Great, thanks!\n\nsupport: Is there anything else I can help you with?\n\ncustomer: No, that's all for now.\n\nsupport: Have a great day!"
+  },
+  {
+    "id": "transcript-2",
+    "ts": 1693499000000,
+    "content": "customer: Can you add integration with Asana?\n\nsupport: That's a great idea! We have received similar requests.\n\ncustomer: It would help our workflow a lot.\n\nsupport: I'll pass this feedback to our product team.\n\ncustomer: Thanks!\n\nsupport: You're welcome. Anything else?\n\ncustomer: No, that's it.\n\nsupport: Have a nice day!"
+  },
+  {
+    "id": "transcript-3",
+    "ts": 1693498000000,
+    "content": "customer: Is it possible to customize whiteboard backgrounds?\n\nsupport: Currently, we only offer a few presets.\n\ncustomer: We'd love to upload our own images.\n\nsupport: That's a feature we are considering.\n\ncustomer: Please prioritize it!\n\nsupport: I'll make sure your request is noted.\n\ncustomer: Thank you!"
+  },
+  {
+    "id": "transcript-4",
+    "ts": 1693497000000,
+    "content": "customer: Do you support integration with Slack?\n\nsupport: Yes, we do!\n\ncustomer: What about Trello?\n\nsupport: Not yet, but it's on our roadmap.\n\ncustomer: Awesome, looking forward to it.\n\nsupport: Thanks for your interest!"
+  },
+  {
+    "id": "transcript-5",
+    "ts": 1693496000000,
+    "content": "customer: Can I export my data to Google Sheets?\n\nsupport: Not at the moment.\n\ncustomer: That would be super helpful.\n\nsupport: I'll add your request to our list.\n\ncustomer: Thanks!"
+  },
+  {
+    "id": "transcript-6",
+    "ts": 1693495000000,
+    "content": "customer: Is there a way to automate recurring tasks?\n\nsupport: We're working on a workflow automation feature.\n\ncustomer: Will it support Zapier?\n\nsupport: Yes, that's planned for the next release.\n\ncustomer: Perfect!"
+  },
+  {
+    "id": "transcript-7",
+    "ts": 1693494000000,
+    "content": "customer: Can you add support for multiple languages?\n\nsupport: We currently support English and Spanish.\n\ncustomer: We'd like French and German too.\n\nsupport: I'll forward your request.\n\ncustomer: Thank you!"
+  },
+  {
+    "id": "transcript-8",
+    "ts": 1693493000000,
+    "content": "customer: Is there a mobile app?\n\nsupport: We're developing one for iOS and Android.\n\ncustomer: Will it have all desktop features?\n\nsupport: Most features will be available.\n\ncustomer: Looking forward to it!"
+  },
+  {
+    "id": "transcript-9",
+    "ts": 1693492000000,
+    "content": "customer: Can you add calendar sync with Outlook?\n\nsupport: That's a popular request.\n\ncustomer: It would help our team a lot.\n\nsupport: I'll let our developers know.\n\ncustomer: Thanks!"
+  },
+  {
+    "id": "transcript-10",
+    "ts": 1693491000000,
+    "content": "customer: Can you add reminders for deadlines?\n\nsupport: We're working on a reminders feature.\n\ncustomer: Will it send push notifications?\n\nsupport: Yes, that's the plan.\n\ncustomer: Awesome!"
+  }
+  ,
+  {
+    "id": "transcript-11",
+    "ts": 1693490500000,
+    "content": "customer: We need support for Asana and Notion integration.\n\nsupport: Those are great suggestions! I'll forward them to our product team.\n\ncustomer: Also, can you add an option to export reports to Excel?\n\nsupport: Exporting to Excel is on our roadmap.\n\ncustomer: Perfect, thanks!"
+  },
+  {
+    "id": "transcript-12",
+    "ts": 1693490400000,
+    "content": "customer: Is there a way to sync with Google Calendar and Outlook?\n\nsupport: We're planning to add Google Calendar sync soon. Outlook integration is under consideration.\n\ncustomer: That would really help our scheduling.\n\nsupport: I'll make sure your feedback is noted."
+  },
+  {
+    "id": "transcript-13",
+    "ts": 1693490300000,
+    "content": "customer: Can you add support for Dropbox and Box file uploads?\n\nsupport: We're looking into cloud storage integrations.\n\ncustomer: Also, a dark theme would be awesome.\n\nsupport: Dark theme is a popular request!\n\ncustomer: Thanks for considering these."
+  },
+  {
+    "id": "transcript-14",
+    "ts": 1693490200000,
+    "content": "customer: Will you support exporting data to Excel and CSV?\n\nsupport: CSV export is coming soon. Excel integration is already on the roadmap, and it's planned for the next quarter.\n\ncustomer: Great! Can you also add push notifications for reminders?\n\nsupport: Push notifications are in development."
+  },
+  {
+    "id": "transcript-15",
+    "ts": 1693490100000,
+    "content": "customer: Can you add support for Slack and Zapier?\n\nsupport: We already have integration with Slack. Zapier support is planned for later this year.\n\ncustomer: Awesome! Also, it would be helpful to have recurring reminders.\n\nsupport: Recurring reminders are on our feature list."
+  },
+  {
+    "id": "transcript-16",
+    "ts": 1693490000000,
+    "content": "customer: Can you add integration with Notion, and also allow exporting to CSV?\n\nsupport: Notion integration and CSV export are both on our roadmap.\n\ncustomer: It would be great to have a dark mode too.\n\nsupport: Dark mode is a popular request!\n\ncustomer: Thanks, those features would really help."
+  },
+  {
+    "id": "transcript-17",
+    "ts": 1693489900000,
+    "content": "customer: We need support for Google Calendar sync, push notifications for reminders, and exporting reports to Excel.\n\nsupport: All three features are planned for future releases.\n\ncustomer: Also, can you add support for multiple languages?\n\nsupport: We're working on expanding language support."
+  },
+  {
+    "id": "transcript-18",
+    "ts": 1693489800000,
+    "content": "customer: Is it possible to integrate with Dropbox, Box, and Zapier?\n\nsupport: We're considering those integrations.\n\ncustomer: I'd also like to customize whiteboard backgrounds and have recurring reminders.\n\nsupport: Both are on our feature list."
+  },
+  {
+    "id": "transcript-19",
+    "ts": 1693489700000,
+    "content": "customer: Can you add support for CSV exports, export to Google Sheets, and a mobile app?\n\nsupport: CSV and Google Sheets export are in development.Our mobile apps are in test phase and should be released in the next weeks.\n\ncustomer: Also, support for French and German languages would be helpful.\n\nsupport: We're expanding our language options."
+  },
+  {
+    "id": "transcript-20",
+    "ts": 1693489600000,
+    "content": "customer: Will you support integration with Trello, Asana, and Slack?\n\nsupport: Those integrations are planned.\n\ncustomer: Can you add push notifications and allow uploading custom images for whiteboards?\n\nsupport: Both features are on our roadmap."
+  }
+]

@@ -1,0 +1,10 @@
+.loading-dialog {
+  > article {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    padding: 2.5rem;
+    width: fit-content;
+  }
+}

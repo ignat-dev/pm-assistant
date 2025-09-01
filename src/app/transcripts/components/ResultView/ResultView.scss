@@ -1,0 +1,22 @@
+.result-view {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  padding: var(--pico-block-spacing-vertical) var(--pico-block-spacing-horizontal);
+
+  > h5 {
+    border-bottom: 1px solid var(--pico-table-border-color);
+    color: var(--pico-muted-color);
+    flex: 0;
+    padding-bottom: 0.5rem;
+  }
+
+  > ul {
+    margin: 0;
+    padding-inline-start: var(--pico-block-spacing-horizontal);
+
+    > li + li {
+      margin-top: 1rem;
+    }
+  }
+}
