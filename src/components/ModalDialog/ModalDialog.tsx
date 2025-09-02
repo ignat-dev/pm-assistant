@@ -6,6 +6,7 @@ interface Props {
   children?: React.ReactNode
   title?: string
   onCancel?: () => void
+  onClose?: () => void
   onConfirm?: () => void
 }
 
@@ -15,13 +16,19 @@ export default function ModalDialog({
   children,
   title,
   onCancel,
+  onClose,
   onConfirm,
 }: Props) {
   return (
     <dialog className="modal-dialog" open={true}>
       <article>
-        {title && (
-          <h3>{title}</h3>
+        {(title || onClose) && (
+          <h3>
+            <span>{title ?? ''}</span>
+            {onClose && (
+              <button className="outline secondary" onClick={onClose}>✕</button>
+            )}
+          </h3>
         )}
         <div>
           {children}

@@ -26,7 +26,7 @@ export function getRecord<T extends DbRecord = DbRecord>(table: string, id: stri
 }
 
 export function getAllRecords<T extends DbRecord = DbRecord>(table: string): Array<T> {
-  return DB[table] as Array<T>
+  return (DB[table] ?? []) as Array<T>
 }
 
 export function updateRecord<T extends DbRecord = DbRecord>(table: string, id: string, item: Partial<T>): T {

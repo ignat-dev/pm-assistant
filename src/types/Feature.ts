@@ -8,4 +8,5 @@ export interface Feature {
   summary: string
   title: string
   timestamp: number
+  transcripts: Array<string>
 }

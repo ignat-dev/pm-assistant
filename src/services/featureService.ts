@@ -167,6 +167,7 @@ async function mergeFeatures(x: Feature, y: Feature): Promise<Feature> {
     importancePoints: x.importancePoints + y.importancePoints,
     relatedFeatures: mergeRelated(x.relatedFeatures, y.relatedFeatures),
     requestCount: x.requestCount + 1,
+    transcripts: Array.from(new Set([...x.transcripts, ...y.transcripts])),
   }
 }
 

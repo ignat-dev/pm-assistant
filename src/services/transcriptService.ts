@@ -2,8 +2,12 @@ import { DbName } from '@/common/constants'
 import { ProcessingResult, Transcript } from '@/types'
 import { ChatOpenAI } from '@langchain/openai'
 import { v4 as uuidv4 } from 'uuid'
-import { addRecord, getAllRecords } from './dbService'
+import { addRecord, getAllRecords, getRecord } from './dbService'
 import { processFeatures } from './featureService'
+
+export async function getTranscript(id: string): Promise<Transcript | null> {
+  return getRecord<Transcript>(DbName.Transcripts, id)
+}
 
 export async function getAllTranscripts(): Promise<Array<Transcript>> {
   return getAllRecords<Transcript>(DbName.Transcripts)
@@ -67,6 +71,7 @@ export async function processTranscript(content: string): Promise<ProcessingResu
     summary,
     title,
     timestamp: transcript.timestamp,
+    transcripts: [transcript.id],
   }))
 
   const { features, duplicates } = await processFeatures(extractedFeatures)

@@ -1,6 +1,10 @@
 import { ProcessingResult, Transcript } from '@/types'
 import { api } from './apiClient'
 
+export function getTranscript(id: string): Promise<Transcript | null> {
+  return api.get<Transcript | null>(`/api/transcripts/${id}`)
+}
+
 export function getTranscripts(): Promise<Array<Transcript>> {
   return api.get<Array<Transcript>>('/api/transcripts')
 }

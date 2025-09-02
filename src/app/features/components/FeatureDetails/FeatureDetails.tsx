@@ -6,13 +6,25 @@ interface Props {
   feature: Feature
   relatedFeatures: Array<SimilarFeature>
   onClickRelated: (feature: Feature) => void
+  onClickTranscript: (transcriptId: string) => void
   onClose: () => void
 }
 
-export default function FeatureDetails({ feature, relatedFeatures, onClickRelated, onClose }: Props) {
+export default function FeatureDetails({
+  feature,
+  relatedFeatures,
+  onClickRelated,
+  onClickTranscript,
+  onClose,
+}: Props) {
   const handleClickRelated = (e: React.MouseEvent, relatedFeature: Feature) => {
     e.preventDefault()
     onClickRelated(relatedFeature)
+  }
+
+  const handleClickTranscript = (e: React.MouseEvent, transcriptId: string) => {
+    e.preventDefault()
+    onClickTranscript(transcriptId)
   }
 
   return (
@@ -60,6 +72,20 @@ export default function FeatureDetails({ feature, relatedFeatures, onClickRelate
                   </a>
                   {' '}
                   <span>({(similarity * 100).toFixed(0)}%)</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+        {feature.transcripts.length > 0 && (
+          <section>
+            <h5>Transcripts</h5>
+            <ul>
+              {feature.transcripts.map((transcriptId) => (
+                <li key={transcriptId}>
+                  <a href="" onClick={(e) => handleClickTranscript(e, transcriptId)}>
+                    {transcriptId}
+                  </a>
                 </li>
               ))}
             </ul>
