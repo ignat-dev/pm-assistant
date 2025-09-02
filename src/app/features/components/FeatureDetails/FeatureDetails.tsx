@@ -44,7 +44,9 @@ export default function FeatureDetails({ feature, relatedFeatures, onClickRelate
         {feature.summary && (
           <section>
             <h5>Summary</h5>
-            <p>{feature.summary}</p>
+            {feature.summary.split('\n\n').filter((x) => x.trim().length > 0).map((content, i) => (
+              <p key={i}>{content}</p>
+            ))}
           </section>
         )}
         {relatedFeatures.length > 0 && (

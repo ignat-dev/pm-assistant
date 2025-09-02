@@ -33,7 +33,7 @@ export async function processTranscript(content: string): Promise<ProcessingResu
     - First and foremost, identify who is the customer in the conversation.
     - Identify and extract key needs and pain points for the customer.
     - Drop requests that are confirmed as available by the support representative.
-    - Do not include features from the support representative's messages/replies.
+    - Do not include information from the support representative's messages/replies.
     - Analyze all information and connections or relations between the requests.
     - Split unrelated topics into separate features, even if they are mentioned together.
     - Combine similar requests into one feature, but only if they are closely related.
