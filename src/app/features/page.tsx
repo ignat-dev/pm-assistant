@@ -2,7 +2,7 @@
 
 import { LoadingDialog } from '@/components'
 import { getFeatures } from '@/lib/api'
-import { Feature } from '@/types'
+import { Feature, SimilarFeature } from '@/types'
 import { useEffect, useMemo, useState } from 'react'
 import FeatureDetails from './components/FeatureDetails/FeatureDetails'
 import FeatureList from './components/FeatureList/FeatureList'
@@ -15,10 +15,18 @@ export default function Features() {
   const [selectedFeature, setSelectedFeature] = useState<Feature | null>(null)
 
   const currentRelatedFeatures = useMemo(() => (
-    selectedFeature?.relatedFeatures
-      .map((id) => features.find((f) => f.id === id) ?? null)
-      .filter<Feature>((x) => x !== null)
-    ?? []
+    selectedFeature?.relatedFeatures.reduce(
+      (result, { featureId, similarity }) => {
+        const feature = features.find((f) => f.id === featureId) ?? null
+
+        if (feature) {
+          result.push({ feature, similarity })
+        }
+
+        return result
+      },
+      [] as Array<SimilarFeature>,
+    ).sort((x, y) => y.similarity - x.similarity) ?? []
   ), [selectedFeature, features])
 
   useEffect(() => {

@@ -1,3 +1,5 @@
 export * from './Feature'
 export * from './ProcessingResult'
+export * from './SimilarFeature'
+export * from './SimilarFeatureResult'
 export * from './Transcript'

@@ -1,5 +1,5 @@
 import { DbName } from '@/common/constants'
-import { Feature, ProcessingResult } from '@/types'
+import { Feature, ProcessingResult, SimilarFeatureResult } from '@/types'
 import { addRecord, addText, getAllRecords, getRecord, queryText, updateRecord } from './dbService'
 
 const SIMILARITY_THRESHOLD_DUPLICATE = 0.90
@@ -44,11 +44,17 @@ export async function processFeatures(features: Array<Feature>): Promise<Process
         continue
       } else {
         // Add the most similar features as related.
-        feature.relatedFeatures = mergeRelated([], similarFeatures.map(([feature]) => feature.id))
+        feature.relatedFeatures = mergeRelated([], similarFeatures.map(([feature, similarity]) => ({
+          featureId: feature.id,
+          similarity,
+        })))
         // Also update the related features.
-        similarFeatures.forEach(([similarFeature]) =>
+        similarFeatures.forEach(([similarFeature, similarity]) =>
           updateRecord<Feature>(DbName.Features, similarFeature.id, {
-            relatedFeatures: mergeRelated(similarFeature.relatedFeatures, [feature.id]),
+            relatedFeatures: mergeRelated(similarFeature.relatedFeatures, [{
+              featureId: feature.id,
+              similarity,
+            }]),
           })
         )
       }
@@ -105,6 +111,18 @@ function mergeFeatures(x: Feature, y: Feature): Feature {
   }
 }
 
-function mergeRelated(x: Array<string>, y: Array<string>): Array<string> {
-  return Array.from(new Set([...x, ...y]))
+function mergeRelated<T extends SimilarFeatureResult>(x: Array<T>, y: Array<T>): Array<T> {
+  const result = [...x]
+
+  for (const item of y) {
+    const existing = result.find((x) => x.featureId === item.featureId)
+
+    if (existing) {
+      existing.similarity = Math.max(existing.similarity, item.similarity)
+    } else {
+      result.push(item)
+    }
+  }
+
+  return result
 }

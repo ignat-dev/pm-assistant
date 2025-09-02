@@ -1,10 +1,10 @@
-import { Feature } from '@/types'
+import { Feature, SimilarFeature } from '@/types'
 
 import './FeatureDetails.scss'
 
 interface Props {
   feature: Feature
-  relatedFeatures: Array<Feature>
+  relatedFeatures: Array<SimilarFeature>
   onClickRelated: (feature: Feature) => void
   onClose: () => void
 }
@@ -51,11 +51,13 @@ export default function FeatureDetails({ feature, relatedFeatures, onClickRelate
           <section>
             <h5>Related Features</h5>
             <ul>
-              {relatedFeatures.map((relatedFeature) => (
+              {relatedFeatures.map(({ feature: relatedFeature, similarity }) => (
                 <li key={relatedFeature.id}>
                   <a href="" onClick={(e) => handleClickRelated(e, relatedFeature)}>
                     {relatedFeature.title}
                   </a>
+                  {' '}
+                  <span>({(similarity * 100).toFixed(0)}%)</span>
                 </li>
               ))}
             </ul>
