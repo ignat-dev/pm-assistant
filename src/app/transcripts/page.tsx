@@ -6,6 +6,7 @@ import { ProcessingResult, Transcript } from '@/types'
 import { simulateDelay } from '@/utils'
 import { useRouter } from 'next/navigation'
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import ProcessingSummary from './components/ProcessingSummary/ProcessingSummary'
 import ResultView from './components/ResultView/ResultView'
 import TranscriptPreview from './components/TranscriptPreview/TranscriptPreview'
 
@@ -20,15 +21,19 @@ export default function Transcripts() {
   const [processingResult, setProcessingResult] = useState<ProcessingResult | null>(null)
   const [totalCount, setTotalCount] = useState(0)
   const [useTestData, setUseTestData] = useState(false)
-  const isComplete = useMemo(() => processedCount === totalCount, [processedCount, totalCount])
   const router = useRouter()
+
+  const isComplete = useMemo(() => (
+    Math.min(processedCount, totalCount) === totalCount
+  ), [processedCount, totalCount])
 
   const loadItems = useCallback(async (): Promise<Array<Transcript>> => {
     let result: Array<Transcript> = []
+    const loadFn = useTestData ? getTestTranscripts : getTranscripts
 
     try {
       setIsLoading(true)
-      result = await (useTestData ? getTestTranscripts : getTranscripts)()
+      result = await loadFn()
       await simulateDelay(1000)
     } catch (error) {
       console.error('Error loading transcripts:', error)
@@ -46,13 +51,14 @@ export default function Transcripts() {
 
       const data = await processTranscript(transcript.content)
 
-      setProcessedCount((prev) => prev + 1)
       setProcessingResult(data)
       setFeaturesCount((prev) => prev + data.features.length)
       setDuplicatesCount((prev) => prev + data.duplicates.length)
       await simulateDelay(1500)
     } catch (error) {
       console.error('Error processing transcript:', error)
+    } finally {
+      setProcessedCount((prev) => prev + 1)
     }
   }, [])
 
@@ -94,8 +100,15 @@ export default function Transcripts() {
         onConfirm={() => setUseTestData(true)}
       >
         <p>
-          Currently there are no chat transcripts available for processing.
-          Some example chat transcripts will be loaded for testing purposes.
+          No chat transcripts were found to process at this time.
+        </p>
+        <p>
+          For demonstration of how feature extraction works, a collection of
+          sample transcripts will be loaded.
+        </p>
+        <p>
+          Please note that processing of the transcripts may take a few minutes.
+          Thank you for your patience!
         </p>
       </ModalDialog>
     )
@@ -121,19 +134,20 @@ export default function Transcripts() {
       return (
         <section>
           <article>
-            <h2>Transcripts processing complete</h2>
-            <p>
-              All chat transcripts have been processed successfully.
-            </p>
-            <p>Summary of processing results:</p>
-            <ul>
-              <li>Total transcripts: {totalCount}</li>
-              <li>Feature requests: {featuresCount}</li>
-              <li>Duplicate features: {duplicatesCount}</li>
-            </ul>
-            <p>
-              Now you can proceed to review the extracted feature requests.
-            </p>
+            <div>
+              <h2>Transcripts processing complete</h2>
+              <p>
+                All chat transcripts have been processed successfully.
+              </p>
+              <ProcessingSummary
+                duplicatesCount={duplicatesCount}
+                featuresCount={featuresCount}
+                transcriptsCount={totalCount}
+              />
+              <p>
+                Now you can proceed to review the extracted feature requests.
+              </p>
+            </div>
             <footer>
               <button onClick={() => router.push('/features')}>Continue</button>
             </footer>

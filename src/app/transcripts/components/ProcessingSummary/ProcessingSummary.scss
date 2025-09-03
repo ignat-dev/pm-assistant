@@ -1,0 +1,11 @@
+.processing-summary {
+  margin: auto 0;
+
+  > table {
+    > tbody > tr > td {
+      &:last-of-type {
+        text-align: right;
+      }
+    }
+  }
+}

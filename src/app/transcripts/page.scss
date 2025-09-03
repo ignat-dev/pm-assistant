@@ -54,7 +54,17 @@
       margin: 0;
       width: 100%;
 
+      > div {
+        display: flex;
+        flex: 1 1 100%;
+        flex-direction: column;
+        gap: calc(0.5 * var(--pico-block-spacing-vertical));
+        margin: 0 auto var(--pico-block-spacing-vertical) auto;
+        width: max-content;
+      }
+
       > footer {
+        flex: 0 0 auto;
         margin-top: auto;
         text-align: right;
       }
