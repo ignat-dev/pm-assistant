@@ -1,0 +1,22 @@
+.chat-preview {
+  display: grid;
+  gap: var(--pico-block-spacing-vertical);
+  grid-template-columns: min-content auto;
+  grid-auto-rows: min-content;
+  width: 100%;
+
+  > :nth-child(odd) {
+    color: var(--pico-muted-color);
+    font-family: var(--pico-font-family-monospace);
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 2;
+    text-align: right;
+    text-transform: uppercase;
+
+    &::after {
+      content: ':';
+      display: inline;
+    }
+  }
+}

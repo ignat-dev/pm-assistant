@@ -1,6 +1,6 @@
 'use client'
 
-import { LoadingDialog, ModalDialog } from '@/components'
+import { ChatPreview, LoadingDialog, ModalDialog } from '@/components'
 import { getFeatures, getTranscript } from '@/lib/api'
 import { Feature, SimilarFeature, Transcript } from '@/types'
 import { useEffect, useMemo, useState } from 'react'
@@ -70,11 +70,11 @@ export default function Features() {
       )}
       {selectedTranscriptId && (
         <ModalDialog title="Transcript preview" onClose={() => setSelectedTranscriptId(null)}>
-          <p style={{ whiteSpace: 'pre-wrap' }}>
-            {selectedTranscript?.content ?? (
-              <span aria-busy="true">Loading transcript content...</span>
-            )}
-          </p>
+          {selectedTranscript?.content ? (
+            <ChatPreview content={selectedTranscript.content} style={{ marginBottom: '1rem' }} />
+          ) : (
+            <span aria-busy="true">Loading transcript content...</span>
+          )}
         </ModalDialog>
       )}
     </main>

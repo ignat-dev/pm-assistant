@@ -1,3 +1,4 @@
+export * from './ConversationLog'
 export * from './Feature'
 export * from './ProcessingResult'
 export * from './SimilarFeature'
